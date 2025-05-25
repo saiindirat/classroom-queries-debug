@@ -44,7 +44,6 @@ class CoursesController < ApplicationController
     the_id = params.fetch("path_id")
     @course = Course.where({ :id => the_id }).at(0)
     @course.destroy
-
     redirect_to("/courses", { :notice => "Course deleted successfully." })
   end
 end
